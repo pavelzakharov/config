@@ -1,0 +1,32 @@
+server:
+  port: 8081
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-defaul: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+  database:
+    driverClassName:  org.postgresql.Driver
+  show-sql: true
+  datasource:
+    platform: postgres
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    username: postgres
+    password: "{cipher}c52712f707eb182040b97ce42e4925f23e02b6f05c5fd81de79b9d1914ba76c5"
