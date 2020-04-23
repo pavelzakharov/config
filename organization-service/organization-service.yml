@@ -23,7 +23,7 @@ spring:
     database: POSTGRESQL
   database:
     driverClassName:  org.postgresql.Driver
-    show-sql: true
+  show-sql: true
   datasource:
     platform: postgres
     testWhileIdle: true
